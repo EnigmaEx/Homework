@@ -3,6 +3,7 @@ package Lesson_5;
 import static Lesson_5.Lesson_5.*;
 
 public class Main {
+
     public static void main(String[] args) {
         printThreeWords(); /*1 задание*/
         checkSumSign(-8, 6); /*2 задание*/
