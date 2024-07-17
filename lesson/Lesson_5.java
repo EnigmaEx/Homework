@@ -9,7 +9,7 @@ public class Lesson_5 {
     }
 
     public static void checkSumSign(int a, int b) {
-        boolean isPositive = (a + b) >= 0; // переменная объявлена в теле метода
+        boolean isPositive = (a + b) >= 0;
         System.out.println(isPositive ? "Сумма положительная" : "Сумма отрицательная");
     }
 
@@ -33,7 +33,7 @@ public class Lesson_5 {
     }
 
     public static boolean isNegative(int number) {
-        return number < 0; // 7 задание
+        return number < 0;
     }
 
     public static void printStringMultipleTimes(String str, int times) {
