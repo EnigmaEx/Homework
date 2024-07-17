@@ -1,7 +1,6 @@
 public class Main {
 
-    public static void main (String[] args) {
-
+    public static void main(String[] args) {
         Employee[] employees = new Employee[5];
         employees[0] = new Employee("Evgeniy Kunko", "Manager", "evgikunko@gmail.com", "+79056789753", 400, 27);
         employees[1] = new Employee("Astik Baum", "Pro Manager", "Asti69@gmail.com", "+79834579602", 650, 32);
@@ -16,12 +15,12 @@ public class Main {
 
         Park park = new Park();
 
-        Park.Attraction[] attractions = new Park.Attraction[5];
+        Park.Attraction[] attractions = park.createAttractions(5);
         attractions[0] = park.new Attraction("Swing Rides", "10:00 AM", "08:00 PM", 1.99);
         attractions[1] = park.new Attraction("Train Rides", "11:00 AM", "07:00 PM", 3.99);
         attractions[2] = park.new Attraction("Frisbee Ride", "10:00 AM", "08:00 PM", 1.69);
         attractions[3] = park.new Attraction("Kiddie Rides", "10:00 AM", "08:00 PM", 0.99);
-        attractions[4] = park.new Attraction("Paratrooper", "11:00 AM", "06:00 PM", 2.49);
+        attractions[4] = park.new Attraction("Paratrooper", "11:00 AM", "06:00 PM", 2.49 );
 
         for (Park.Attraction attraction : attractions) {
             attraction.printInfo();

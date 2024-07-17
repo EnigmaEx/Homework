@@ -1,7 +1,6 @@
 public class Park {
 
     public class Attraction {
-
         private String name;
         private String openingTime;
         private String closingTime;
@@ -12,14 +11,17 @@ public class Park {
             this.openingTime = openingTime;
             this.closingTime = closingTime;
             this.price = price;
-
         }
 
         public void printInfo() {
-            System.out.println("Name of Attraction: " + name);
+            System.out.println("Attraction: " + name);
             System.out.println("Opening Time: " + openingTime);
             System.out.println("Closing Time: " + closingTime);
             System.out.println("Price: $" + price);
         }
+    }
+
+    public Attraction[] createAttractions(int size) {
+        return new Attraction[size];
     }
 }
