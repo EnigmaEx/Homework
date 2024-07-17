@@ -1,78 +1,97 @@
 package Lesson_5;
 
+import java.util.Arrays;
+
 public class Lesson_5 {
 
     public static void printThreeWords() {
-        System.out.println("Orange\nBanana\nApple"); /*1 задание*/
+        System.out.println("Orange\nBanana\nApple");
     }
 
     public static void checkSumSign(int a, int b) {
-        System.out.println((a + b) >= 0 ? "Сумма положительная" : "Сумма отрицательная"); /*2 задание*/
+        boolean isPositive = (a + b) >= 0; // переменная объявлена в теле метода
+        System.out.println(isPositive ? "Сумма положительная" : "Сумма отрицательная");
     }
 
     public static void printColor(int value) {
-        System.out.println(value <= 0 ? "Красный" : value <= 100 ? "Желтый" : "Зеленый"); /*3 задание*/
+        String color = value <= 0 ? "Красный" : (value <= 100 ? "Желтый" : "Зеленый");
+        System.out.println(color);
     }
 
     public static void compareNumbers(int a, int b) {
-        System.out.println(a >= b ? "a >= b" : "a < b"); /*4 задание*/
+        String comparisonResult = a >= b ? "a >= b" : "a < b";
+        System.out.println(comparisonResult);
     }
 
     public static boolean isSumInRange(int a, int b) {
-        return a + b >= 10 && a + b <= 20; /*5 задание*/
+        return a + b >= 10 && a + b <= 20;
     }
 
     public static void printPositiveOrNegative(int number) {
-        System.out.println(number >= 0 ? "Число положительное" : "Число отрицательное"); /*6 задание*/
+        String positivity = number >= 0 ? "Число положительное" : "Число отрицательное";
+        System.out.println(positivity);
     }
 
     public static boolean isNegative(int number) {
-        return number < 0; /*7 задание*/
+        return number < 0; // 7 задание
     }
 
     public static void printStringMultipleTimes(String str, int times) {
-        for (int i = 0; i < times; i++) System.out.println(str); /*8 задание*/
+        for (int i = 0; i < times; i++) {
+            System.out.println(str);
+        }
     }
 
     public static boolean isLeapYear(int year) {
-        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0); /*9 задание*/
+        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0); // 9 задание
     }
 
     public static void invertBinaryArray(int[] array) {
-        for (int i = 0; i < array.length; i++) array[i] = array[i] == 0 ? 1 : 0; /*10 задание*/
+        for (int i = 0; i < array.length; i++) {
+            array[i] = array[i] == 0 ? 1 : 0;
+        }
     }
 
     public static int[] fillArray(int length) {
         int[] array = new int[length];
-        for (int i = 0; i < length; i++) array[i] = i + 1; /*11 задание*/
+        for (int i = 0; i < length; i++) {
+            array[i] = i + 1;
+        }
         return array;
     }
 
     public static void multiplyElements(int[] array) {
-        for (int i = 0; i < array.length; i++) if (array[i] < 6) array[i] *= 2; /*12 задание*/
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < 6) {
+                array[i] *= 2;
+            }
+        }
     }
 
     public static int[][] fillDiagonal(int size) {
         int[][] matrix = new int[size][size];
-        for (int i = 0; i < size; i++) matrix[i][i] = matrix[i][size - i - 1] = 1; /*13 задание*/
+        for (int i = 0; i < size; i++) {
+            matrix[i][i] = 1;
+            matrix[i][size - i - 1] = 1;
+        }
         return matrix;
     }
 
     public static int[] createArray(int len, int initialValue) {
         int[] array = new int[len];
-        for (int i = 0; i < len; i++) array[i] = initialValue; /*14 задание*/
+        for (int i = 0; i < len; i++) {
+            array[i] = initialValue;
+        }
         return array;
     }
 
     public static void printArray(int[] array) {
-        for (int i : array) System.out.print(i + " "); /*14 задание*/
-        System.out.println();
+        System.out.println(Arrays.toString(array));
     }
 
     public static void printMatrix(int[][] matrix) {
         for (int[] row : matrix) {
-            for (int elem : row) System.out.print(elem + " "); /*14 задание*/
-            System.out.println();
+            System.out.println(Arrays.toString(row));
         }
     }
 }
