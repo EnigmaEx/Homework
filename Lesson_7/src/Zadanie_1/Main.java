@@ -2,34 +2,30 @@ package Zadanie_1;
 
 public class Main {
     public static void main(String[] args) {
-        Dog dogKora = new Dog("Лорд");
-        Cat catPusya = new Cat("Пушистик");
+        Dog dogBobik = new Dog("Бобик");
+        Cat catMurzik = new Cat("Мурзик");
+        Cat catBarsik = new Cat("Барсик");
 
-        dogKora.run(150);
-        dogKora.swim(10);
-        catPusya.run(150);
-        catPusya.swim(3);
+        dogBobik.run(150);
+        dogBobik.swim(5);
 
-        Cat[] cats = {
-                new Cat("Пушистик"),
-                new Cat("Джони"),
-                new Cat("Уголёк"),
-                new Cat("Черныш"),
-                new Cat("Димон")
-        };
+        catMurzik.run(100);
+        catMurzik.swim(5);
 
-        Bowl bowl = new Bowl(30);
+        Bowl bowl = new Bowl(15);
+
+        Cat[] cats = {catMurzik, catBarsik};
 
         for (Cat cat : cats) {
             cat.eat(bowl, 10);
-            System.out.println(cat.name + " сытость: " + cat.isFull());
         }
 
-        bowl.addFood(20);
-        System.out.println("Добавили еды в миску. Количество еды: " + bowl.getFood());
+        for (Cat cat : cats) {
+            System.out.println(cat.name + " сыт: " + cat.isSatiety());
+        }
 
         System.out.println("Всего животных: " + Animal.getAnimalCount());
-        System.out.println("Всего котов: " + Animal.catCount);
-        System.out.println("Всего собак: " + Animal.dogCount);
+        System.out.println("Всего собак: " + Dog.getDogCount());
+        System.out.println("Всего котов: " + Cat.getCatCount());
     }
 }

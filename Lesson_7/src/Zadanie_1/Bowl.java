@@ -1,23 +1,28 @@
 package Zadanie_1;
 
 public class Bowl {
-    private int food;
+    private int foodAmount;
 
-    public Bowl(int food) {
-        this.food = food;
+    public Bowl(int initialFood) {
+        this.foodAmount = Math.max(initialFood, 0);
     }
 
-    public int getFood() {
-        return food;
-    }
-
-    public void decreaseFood(int amount) {
-        if (food >= amount) {
-            food -= amount;
+    public boolean decreaseFood(int amount) {
+        if (foodAmount >= amount) {
+            foodAmount -= amount;
+            return true;
+        } else {
+            return false;
         }
     }
 
     public void addFood(int amount) {
-        food += amount;
+        if (amount > 0) {
+            foodAmount += amount;
+        }
+    }
+
+    public int getFoodAmount() {
+        return foodAmount;
     }
 }
