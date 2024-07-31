@@ -8,41 +8,52 @@ public class Lesson_5 {
         System.out.println("Orange\nBanana\nApple");
     }
 
-    public static void checkSumSign(int a, int b) {
-        boolean isPositive = (a + b) >= 0;
+    public static void checkSumSign() {
+        boolean isPositive = (-8 + 6) >= 0;
         System.out.println(isPositive ? "Сумма положительная" : "Сумма отрицательная");
     }
 
-    public static void printColor(int value) {
+    public static void printColor() {
+        int value = 89;
         String color = value <= 0 ? "Красный" : (value <= 100 ? "Желтый" : "Зеленый");
         System.out.println(color);
     }
 
-    public static void compareNumbers(int a, int b) {
+    public static void compareNumbers() {
+        int a = 13;
+        int b = 9;
         String comparisonResult = a >= b ? "a >= b" : "a < b";
         System.out.println(comparisonResult);
     }
 
-    public static boolean isSumInRange(int a, int b) {
+    public static boolean isSumInRange() {
+        int a = 3;
+        int b = 5;
         return a + b >= 10 && a + b <= 20;
     }
 
-    public static void printPositiveOrNegative(int number) {
+
+    public static void printPositiveOrNegative() {
+        int number = -13;
         String positivity = number >= 0 ? "Число положительное" : "Число отрицательное";
         System.out.println(positivity);
     }
 
-    public static boolean isNegative(int number) {
+    public static boolean isNegative() {
+        int number = 7;
         return number < 0;
     }
 
-    public static void printStringMultipleTimes(String str, int times) {
+    public static void printStringMultipleTimes() {
+        int  times = 2;
+        String str = "Aston";
         for (int i = 0; i < times; i++) {
             System.out.println(str);
         }
     }
 
-    public static boolean isLeapYear(int year) {
+    public static boolean isLeapYear() {
+        int year = 1985;
         return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0); // 9 задание
     }
 
