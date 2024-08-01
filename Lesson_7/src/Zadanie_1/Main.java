@@ -2,30 +2,32 @@ package Zadanie_1;
 
 public class Main {
     public static void main(String[] args) {
-        Dog dogBobik = new Dog("Бобик");
-        Cat catMurzik = new Cat("Мурзик");
-        Cat catBarsik = new Cat("Барсик");
+        Cat cat1 = new Cat("Барсик");
+        Cat cat2 = new Cat("Мурзик");
+        Dog dog1 = new Dog("Шарик");
 
-        dogBobik.run(150);
-        dogBobik.swim(5);
+        cat1.run(150);
+        cat1.swim(5);
 
-        catMurzik.run(100);
-        catMurzik.swim(5);
+        dog1.run(400);
+        dog1.swim(5);
 
-        Bowl bowl = new Bowl(15);
+        System.out.println("Общее количество животных: " + Animal.getAnimalCount());
 
-        Cat[] cats = {catMurzik, catBarsik};
+        Bowl bowl = new Bowl(20);
 
+        Cat[] cats = {cat1, cat2};
         for (Cat cat : cats) {
-            cat.eat(bowl, 10);
+            cat.eat(bowl, 15);
+            System.out.println(cat.name + " сыт: " + !cat.isHungry());
         }
 
+        bowl.addFood(10);
         for (Cat cat : cats) {
-            System.out.println(cat.name + " сыт: " + cat.isSatiety());
+            if (cat.isHungry()) {
+                cat.eat(bowl, 10);
+                System.out.println(cat.name + " сыт: " + !cat.isHungry());
+            }
         }
-
-        System.out.println("Всего животных: " + Animal.getAnimalCount());
-        System.out.println("Всего собак: " + Dog.getDogCount());
-        System.out.println("Всего котов: " + Cat.getCatCount());
     }
 }
