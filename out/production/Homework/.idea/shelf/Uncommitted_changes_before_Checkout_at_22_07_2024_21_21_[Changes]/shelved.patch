@@ -1,0 +1,99 @@
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectModuleManager\">\r\n    <modules>\r\n      <module fileurl=\"file://$PROJECT_DIR$/.idea/Homework.iml\" filepath=\"$PROJECT_DIR$/.idea/Homework.iml\" />\r\n    </modules>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+--- a/.idea/modules.xml	
++++ b/.idea/modules.xml	
+@@ -3,6 +3,7 @@
+   <component name="ProjectModuleManager">
+     <modules>
+       <module fileurl="file://$PROJECT_DIR$/.idea/Homework.iml" filepath="$PROJECT_DIR$/.idea/Homework.iml" />
++      <module fileurl="file://$PROJECT_DIR$/Lesson_8/Lesson_8.iml" filepath="$PROJECT_DIR$/Lesson_8/Lesson_8.iml" />
+     </modules>
+   </component>
+ </project>
+\ No newline at end of file
+Index: Lesson_8/src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Lesson_8/src/Main.java b/Lesson_8/src/Main.java
+new file mode 100644
+--- /dev/null	
++++ b/Lesson_8/src/Main.java	
+@@ -0,0 +1,53 @@
++public class Main {
++
++    public static void main(String[] args) {
++        String[][] array1 = {
++                {"1", "2", "3", "4"},
++                {"5", "6", "7", "8"},
++                {"9", "10", "11", "12"},
++                {"13", "14", "15", "16"}
++        };
++
++        String[][] array2 = {
++                {"1", "2", "3"},
++                {"4", "5", "6"},
++                {"7", "8", "9"},
++                {"10", "11", "12"}
++        };
++
++        try {
++            int sum1 = sumArrayElements(array1);
++            System.out.println("Сумма элементов массива array1: " + sum1);
++        } catch (MyArraySizeException | MyArrayDataException e) {
++            e.printStackTrace();
++        }
++
++        try {
++            int sum2 = sumArrayElements(array2);
++            System.out.println("Сумма элементов массива array2: " + sum2);
++        } catch (MyArraySizeException | MyArrayDataException e) {
++            e.printStackTrace();
++        }
++    }
++
++    public static int sumArrayElements(String[][] array) throws MyArraySizeException, MyArrayDataException {
++        // Проверяем размер массива
++        if (array.length != 4 || array[0].length != 4) {
++            throw new MyArraySizeException("Размер массива должен быть 4x4");
++        }
++
++        int sum = 0;
++        for (int i = 0; i < array.length; i++) {
++            for (int j = 0; j < array[i].length; j++) {
++                try {
++                    int num = Integer.parseInt(array[i][j]);
++                    sum += num;
++                } catch (NumberFormatException e) {
++                    throw new MyArrayDataException("Невозможно преобразовать данные в число", i, j);
++                }
++            }
++        }
++
++        return sum;
++    }
++}
+Index: out/production/Homework/.idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectModuleManager\">\r\n    <modules>\r\n      <module fileurl=\"file://$PROJECT_DIR$/.idea/Homework.iml\" filepath=\"$PROJECT_DIR$/.idea/Homework.iml\" />\r\n    </modules>\r\n  </component>\r\n</project>
+===================================================================
+diff --git a/out/production/Homework/.idea/modules.xml b/out/production/Homework/.idea/modules.xml
+--- a/out/production/Homework/.idea/modules.xml	
++++ b/out/production/Homework/.idea/modules.xml	
+@@ -3,6 +3,7 @@
+   <component name="ProjectModuleManager">
+     <modules>
+       <module fileurl="file://$PROJECT_DIR$/.idea/Homework.iml" filepath="$PROJECT_DIR$/.idea/Homework.iml" />
++      <module fileurl="file://$PROJECT_DIR$/Lesson_8/Lesson_8.iml" filepath="$PROJECT_DIR$/Lesson_8/Lesson_8.iml" />
+     </modules>
+   </component>
+ </project>
+\ No newline at end of file
